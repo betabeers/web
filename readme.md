@@ -1,27 +1,81 @@
-# Laravel PHP Framework
+# Betabeers Web
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+> Nueva versión de la web de betabeers.com
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Índice
+- [Requisitos](#requisitos)
+- [Instalación](#instalacion)
+  1. [Homestead](#homestead)
+  2. [Clonando el repositorio](#clonando-el-repositorio)
+  3. [Instalar dependencias](#instalar-dependencias)
+  4. [Configurar entorno](#configurar-entorno)
+  5. [Migraciones y semillas](#migraciones-y-semillas)
+- [Gestión del proyecto](#gestion-del-proyecto)
+- [Colaboradores](#colaboradores)
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Requisitos
+- [PHP 7.1](http://php.net/)
+- [MySQL](https://www.mysql.com/)
+- [NodeJS (npm)](https://nodejs.org/)
+- [Composer](https://getcomposer.org/)
 
-## Official Documentation
+> Todos los requisitos están dentro de Homestead <small>(ver más abajo)</small>
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Instalación
 
-## Contributing
+### Homestead
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Homestead es el paquete oficial de Laravel para Vagrant. 
 
-## Security Vulnerabilities
+Instalar siguiendo la [documentación oficial](https://laravel.com/docs/5.3/homestead).
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### Clonando el repositorio
 
-## License
+Una vez instalado y configurado Homestead se clona el repositorio dentro de la máquina virtual.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+```
+git clone git@bitbucket.org:betabeers/web.git
+```
+
+### Instalar dependencias
+
+Instalar las dependencias del proyecto:
+
+```
+composer install
+```
+
+Instalar las dependencias javascript:
+
+```
+npm install
+```
+
+### Configurar entorno
+
+Para configurar el entorno hay que duplicar el archivo *.env.example* y nombrarlo como *.env*.
+
+Una vez duplicado, se edita el archivo *.env* para adaptarlo a la configuración del entorno.
+
+### Migraciones y semillas
+
+Cuando se haya configurado el entorno correctamente se ejecuta el siguiente comando para crear la estructura de la base de datos e insertar los datos necesarios:
+
+> Este paso no es necesario hasta que no se haya creado la estructura de datos.
+
+```
+php artisan migrate --seed
+```
+
+
+## Gestión del proyecto
+
+La gestión de proyecto se realiza mediante [Trello](https://trello.com/b/kja1mSpP/bb-web-2017).
+
+## Colaboradores
+- [Fernando Carrascosa](http://fcarrascosa.es)
+- [David Francos](https://twitter.com/davidfrancos)
+- [Pablo RM](https://twitter.com/yondemon)
+- [Jaime Sares](http://jaimesares.com)
+- [Raul Torralba](https://twitter.com/raul_torralba)
+- [Ver más...]()
