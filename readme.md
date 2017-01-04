@@ -3,15 +3,15 @@
 > Nueva versión de la web de betabeers.com
 
 ## Índice
-- [Requisitos](#requisitos)
-- [Instalación](#instalacion)
-  1. [Homestead](#homestead)
-  2. [Clonando el repositorio](#clonando-el-repositorio)
-  3. [Instalar dependencias](#instalar-dependencias)
-  4. [Configurar entorno](#configurar-entorno)
-  5. [Migraciones y semillas](#migraciones-y-semillas)
-- [Gestión del proyecto](#gestion-del-proyecto)
-- [Colaboradores](#colaboradores)
+* [Requisitos](#requisitos)
+* [Instalación](#instalacion)
+    * [Homestead](#homestead)
+    * [Clonando el repositorio](#clonando-el-repositorio)
+    * [Instalar dependencias](#instalar-dependencias)
+    * [Configurar entorno](#configurar-entorno)
+    * [Migraciones y semillas](#migraciones-y-semillas)
+* [Gestión del proyecto](#gestion-del-proyecto)
+* [Colaboradores](#colaboradores)
 
 ## Requisitos
 - [PHP 7.1](http://php.net/)
@@ -19,7 +19,7 @@
 - [NodeJS (npm)](https://nodejs.org/)
 - [Composer](https://getcomposer.org/)
 
-> Todos los requisitos están dentro de Homestead <small>(ver más abajo)</small>
+> Todos los requisitos están dentro de Homestead (ver abajo)
 
 ## Instalación
 
