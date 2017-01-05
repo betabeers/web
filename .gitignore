@@ -7,3 +7,5 @@ Homestead.yaml
 .env
 .DS_Store
 composer.phar
+/public/js
+/public/css
