@@ -9,3 +9,5 @@ Homestead.yaml
 composer.phar
 /public/js
 /public/css
+_ide_helper.php
+.phpstorm.meta.php
