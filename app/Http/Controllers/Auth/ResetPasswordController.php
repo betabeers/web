@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
@@ -21,12 +22,34 @@ class ResetPasswordController extends Controller
     use ResetsPasswords;
 
     /**
-     * Create a new controller instance.
+     * Where to redirect users.
      *
-     * @return void
+     * @var string
+     */
+    protected $redirectTo = '/';
+
+    /**
+     * Create a new controller instance.
      */
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    /**
+     * Reset the given user's password.
+     *
+     * @param  \Illuminate\Contracts\Auth\CanResetPassword  $user
+     * @param  string  $password
+     * @return void
+     */
+    protected function resetPassword($user, $password)
+    {
+        $user->forceFill([
+            'password' => $password,
+            'remember_token' => Str::random(60),
+        ])->save();
+
+        $this->guard()->login($user);
     }
 }
