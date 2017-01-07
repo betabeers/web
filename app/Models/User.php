@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'slug'
     ];
 
     /**
@@ -27,6 +27,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Find user by slug and id
+     *
+     * @param $slug
+     * @param $id
+     */
+    public function findBySlugAndId($slug, $id)
+    {
+        return $this->where('slug', $slug)->findOrFail($id);
+    }
 
     /**
      * Encrypt password automatically
