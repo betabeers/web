@@ -16,7 +16,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'slug'
+        'name', 'email', 'password', 'slug', 'body', 'phone', 'freelance', 'country_id', 'city_id', 'province_id',
+        'location', 'portafolio', 'lookingfor', 'unemployed', 'can_contact', 'newsletter', 'alert_commercial',
+        'company_name', 'company_email', 'company_cif', 'company_addresses', 'url', 'linkedin_url', 'twitter_url',
+        'forrst_url', 'github_url', 'dribbble_url', 'flickr_url', 'youtube_url', 'stackoverflow_url', 'vimeo_url',
+        'delicius_url', 'pinboard_url', 'itunes_url', 'android_url', 'chrome_url', 'masterbranch_url', 'bitbucket_url',
     ];
 
     /**
