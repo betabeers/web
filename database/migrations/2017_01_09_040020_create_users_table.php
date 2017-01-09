@@ -28,9 +28,9 @@ class CreateUsersTable extends Migration
             $table->integer('karma')->default(0);
             $table->integer('votes')->default(0);
             $table->integer('visits')->default(0);
-            $table->integer('country_id')->nullable();
-            $table->integer('city_id')->nullable();
-            $table->string('province_id', 2)->nullable();
+            $table->integer('country_id')->unsigned()->nullable();
+            $table->integer('city_id')->unsigned()->nullable();
+            $table->integer('province_id')->unsigned()->nullable();
             $table->string('location')->nullable();
             $table->integer('total_logins')->default(0);
             $table->date('last_login')->nullable();
@@ -74,6 +74,10 @@ class CreateUsersTable extends Migration
             $table->integer('visits_finder')->default(0);
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('set null');
+            $table->foreign('province_id')->references('id')->on('provinces')->onDelete('set null');
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('set null');
         });
     }
 
