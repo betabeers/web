@@ -11,3 +11,6 @@ composer.phar
 /public/css
 _ide_helper.php
 .phpstorm.meta.php
+*~
+*.swp
+*.swo
