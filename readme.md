@@ -72,10 +72,16 @@ php artisan migrate --seed
 
 La gestión de proyecto se realiza mediante [Trello](https://trello.com/b/kja1mSpP/bb-web-2017).
 
+## Coding Style
+
+En este proyecto seguimos el estilo de programación marcado por el estándar [PSR-2](http://www.php-fig.org/psr/psr-2/).
+Además para que todos los colaboradores usen el mismo formato de fichero, se ha añadido una configuración para este fin
+en el fichero .editorconfig
+
 ## Colaboradores
 - [Fernando Carrascosa](http://fcarrascosa.es)
 - [David Francos](https://twitter.com/davidfrancos)
 - [Pablo RM](https://twitter.com/yondemon)
 - [Jaime Sares](http://jaimesares.com)
-- [Raul Torralba](https://twitter.com/raul_torralba)
+- [Raül Torralba](https://www.artansoft.com)
 - [Ver más...]()
