@@ -1,0 +1,46 @@
+.btn {
+
+  &-primary {
+
+    background: $color-background;
+    border-color: transparent;
+
+    &:hover {
+
+      background: $color-background-white;
+      border-color: $color-primary;
+      color: $color-primary;
+
+    }
+
+  }
+
+  &-secondary {
+
+    background: $color-background-white;
+    border-color: $color-primary;
+    color: $color-primary;
+
+    &:hover {
+
+      background: $color-background;
+      border-color: transparent;
+      color: $white;
+
+    }
+
+  }
+
+  &-link {
+
+    color: $color-primary;
+
+    &:hover {
+
+      color: $color-secondary;
+
+    }
+
+  }
+
+}

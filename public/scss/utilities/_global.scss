@@ -46,17 +46,18 @@ $midnight-blue                : #036;
 $black                        : #000;
 
 $betabeers-red                : #A32000;
+$betabeers-red-dark           : #801800;
 
 // Main color palette
-$color-primary                : $hopbush;
-$color-secondary              : $bouquet;
+$color-primary                : $betabeers-red;
+$color-secondary              : $betabeers-red-dark;
 $color-accent                 : $patina;
 $color-shadow                 : rgba($black, .125);
 $color-note                   : #666;
 
 // Common colors
-$color-background             : $white;
-$color-background-shade       : $iron;
+$color-background             : $betabeers-red;
+$color-background-white       : $white;
 $color-background-invert      : $hopbush;
 $color-border                 : $iron;
 $color-text                   : darken($pale-sky, 15);
