@@ -7,10 +7,10 @@ Homestead.yaml
 .env
 .DS_Store
 composer.phar
-/public/js
-/public/css
+/public/css/*
 _ide_helper.php
 .phpstorm.meta.php
 *~
 *.swp
 *.swo
+/public/node_modules/
