@@ -72,13 +72,12 @@ php artisan migrate --seed
 
 La gestión de proyecto se realiza mediante [Trello](https://trello.com/b/kja1mSpP/bb-web-2017).
 
-<<<<<<< HEAD
 ## Coding Style
 
 En este proyecto seguimos el estilo de programación marcado por el estándar [PSR-2](http://www.php-fig.org/psr/psr-2/).
 Además para que todos los colaboradores usen el mismo formato de fichero, se ha añadido una configuración para este fin
 en el fichero .editorconfig
-=======
+
 ## Sobre las hojas de estilos y cómo actualizarla
 
 Una vez se hayan terminado de modificar los .scss, para procesarlos se debe utilizar el comando
@@ -86,7 +85,6 @@ Una vez se hayan terminado de modificar los .scss, para procesarlos se debe util
 ```gulp sass```
 
 
->>>>>>> Add Sassy Starter With Bootstrap 4-alpha library
 
 ## Colaboradores
 - [Fernando Carrascosa](http://fcarrascosa.es)
