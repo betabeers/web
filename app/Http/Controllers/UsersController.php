@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Fractal;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Transformers\UserTransformer;
 
 class UsersController extends Controller
 {
@@ -34,13 +32,7 @@ class UsersController extends Controller
      */
     public function show(Request $request)
     {
-        $user = $request->user();
-
-        if ($request->isJson()) {
-            return Fractal::item($user, new UserTransformer);
-        }
-
-        return view('users.show', compact('user'));
+        return view('users.show', ['user' => $request->user()]);
     }
 
     /**
@@ -51,9 +43,7 @@ class UsersController extends Controller
      */
     public function edit(Request $request)
     {
-        $user = $request->user();
-
-        return view('users.edit', compact('user'));
+        return view('users.edit', ['user' => $request->user()]);
     }
 
     /**
@@ -64,14 +54,9 @@ class UsersController extends Controller
      */
     public function update(Request $request)
     {
-        $user = $request->user();
-        $user->update($request->all());
+        $request->user()->update($request->all());
 
-        if ($request->isJson()) {
-            return Fractal::item($user, new UserTransformer);
-        }
-
-        return redirect()->route('users.show', ['slug' => $user->slug, 'id' => $user->id]);
+        return redirect()->route('users.show', ['slug' => $request->user()->slug, 'id' => $request->user()->id]);
     }
 
     /**
