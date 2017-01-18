@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->unique()->unique();
             $table->string('password');
             $table->boolean('admin')->default(0);
             $table->boolean('moderator')->default(0);
@@ -47,12 +47,12 @@ class CreateUsersTable extends Migration
             $table->string('company_email')->nullable();
             $table->string('company_cif')->nullable();
             $table->string('company_addresses')->nullable();
-            $table->string('facebook_id', 30)->nullable();
-            $table->string('twitter_id', 30)->nullable();
-            $table->string('google_id', 30)->nullable();
-            $table->string('github_id', 30)->nullable();
-            $table->string('linkedin_id', 30)->nullable();
-            $table->string('amazon_id', 50)->nullable();
+            $table->string('facebook_id', 30)->nullable()->unique();
+            $table->string('twitter_id', 30)->nullable()->unique();
+            $table->string('google_id', 30)->nullable()->unique();
+            $table->string('github_id', 30)->nullable()->unique();
+            $table->string('linkedin_id', 30)->nullable()->unique();
+            $table->string('amazon_id', 50)->nullable()->unique();
             $table->string('url')->nullable();
             $table->string('linkedin_url')->nullable();
             $table->string('twitter_url')->nullable();
@@ -72,8 +72,10 @@ class CreateUsersTable extends Migration
             $table->string('bitbucket_url')->nullable();
             $table->integer('visits_google')->default(0);
             $table->integer('visits_finder')->default(0);
+            $table->text('delete_reason')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('city_id')->references('id')->on('cities')->onDelete('set null');
             $table->foreign('province_id')->references('id')->on('provinces')->onDelete('set null');
