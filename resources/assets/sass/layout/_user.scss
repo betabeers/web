@@ -1,0 +1,45 @@
+.user {
+
+  // Login View
+
+  &-login {
+    align-items: center;
+    background: $color-background;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+
+    .login {
+      &-title {
+        color: $white;
+      }
+      &-container {
+        background: $color-background-white;
+        border-radius: 3px;
+        box-shadow: 0 5px 5px $color-shadow;
+        max-width: 320px;
+        padding: 15px;
+      }
+
+      &-image {
+        border-radius: 50%;
+        display: block;
+        margin: auto;
+      }
+
+      &-back {
+        @extend .btn-link;
+        color: $white !important;
+        font-size: 0.8em;
+
+        &:hover {
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -2,6 +2,12 @@ const elixir = require('laravel-elixir');
 
 require('laravel-elixir-vue-2');
 
+var paths = {
+    'jquery': './node_modules/jquery/dist/jquery.js',
+    'bootstrap': './node_modules/bootstrap/dist/js/bootstrap.js',
+    'tether': './node_modules/tether/dist/js/tether.js',
+}
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -14,6 +20,16 @@ require('laravel-elixir-vue-2');
  */
 
 elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+    mix.sass('styles.scss')
+       // .webpack('app.js')
+       .scripts([
+           paths.jquery,
+           paths.tether,
+           paths.bootstrap,
+        ],
+        'public/js/all.js',
+        './'
+        )
+        .sass('ie.scss')
+        .copy('node_modules/font-awesome/fonts', 'public/fonts');
 });

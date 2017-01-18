@@ -2,7 +2,7 @@
 
 @section('content')
         <div class="login">
-            <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="login-image">
+            <h1 class="login-title text-center">ßetabeers</h1>
             <div class="login-container">
                 <form class="form-horizontal login-form" role="form" method="POST" action="{{ route('users.login.post') }}">
                     {{ csrf_field() }}
