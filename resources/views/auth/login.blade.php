@@ -4,7 +4,7 @@
         <div class="login">
             <h1 class="login-title text-center">ßetabeers</h1>
             <div class="login-container">
-                <form class="form-horizontal login-form" role="form" method="POST" action="{{ route('users.login.post') }}">
+                <form class="form-horizontal login-form" role="form" method="POST" action="/login">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('email') ? 'has-herror' : '' }}">
@@ -45,7 +45,7 @@
                             Login
                         </button>
 
-                        <a class="btn btn-link" href="{{ route('users.password.email.form') }}">
+                        <a class="btn btn-link" href="/password/reset">
                             Forgot Your Password?
                         </a>
                     </div>

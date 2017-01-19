@@ -12,11 +12,11 @@ class AuthTest extends TestCase
             'password' => 'password'
         ]);
 
-        $this->visitRoute('users.login')
+        $this->visit('/login')
             ->type($user->email, 'email')
             ->type('password', 'password')
             ->press('Login')
-            ->seeRouteIs('index')
+            ->seePageIs('/')
             ->isAuthenticated();
     }
 
@@ -26,11 +26,11 @@ class AuthTest extends TestCase
             'password' => 'password'
         ]);
 
-        $this->visitRoute('users.login')
+        $this->visit('/login')
             ->type($user->email, 'email')
             ->type('wrongpassword', 'password')
             ->press('Login')
-            ->seeRouteIs('users.login')
+            ->seePageIs('/login')
             ->see('Estas credenciales no coinciden con nuestros registros.')
             ->dontSeeIsAuthenticated();
     }
@@ -39,13 +39,13 @@ class AuthTest extends TestCase
     {
         $user = factory(App\Models\User::class)->make();
 
-        $this->visitRoute('users.register')
+        $this->visit('/register')
             ->type($user->name, 'name')
             ->type($user->email, 'email')
             ->type('secret', 'password')
             ->type('secret', 'password_confirmation')
             ->press('Register')
-            ->seeRouteIs('index')
+            ->seePageIs('/')
             ->see($user->name)
             ->isAuthenticated();
     }
@@ -54,13 +54,13 @@ class AuthTest extends TestCase
     {
         $user = factory(App\Models\User::class)->make();
 
-        $this->visitRoute('users.register')
+        $this->visit('/register')
             ->type($user->name, 'name')
             ->type('invalidemail', 'email')
             ->type('secret', 'password')
             ->type('secret', 'password_confirmation')
             ->press('Register')
-            ->seeRouteIs('users.register')
+            ->seePageIs('/register')
             ->see('correo electrónico no es un correo válido');
     }
 
@@ -68,7 +68,7 @@ class AuthTest extends TestCase
     {
         $user = factory(App\Models\User::class)->create();
 
-        $this->visitRoute('users.password.email.form')
+        $this->visit('/password/reset')
             ->type($user->email, 'email')
             ->press('Send Password Reset Link')
             ->see('¡Te hemos enviado por correo el enlace para restablecer tu contraseña!');
@@ -78,12 +78,12 @@ class AuthTest extends TestCase
             ->first()
             ->token;
 
-        $this->visitRoute('users.password.reset.form', $token)
+        $this->visit('/password/reset/' . $token)
             ->type($user->email, 'email')
             ->type('newpassword', 'password')
             ->type('newpassword', 'password_confirmation')
             ->press('Reset Password')
-            ->seeRouteIs('index');
+            ->seePageIs('/');
     }
 
     public function test_logout()
@@ -92,7 +92,7 @@ class AuthTest extends TestCase
 
         \Auth::login($user);
 
-        $this->call('POST', route('users.logout'))
-            ->isRedirect(route('index'));
+        $this->call('POST', '/logout')
+            ->isRedirect('/');
     }
 }

@@ -54,17 +54,6 @@ class User extends Authenticatable
     }
 
     /**
-    * Send the password reset notification.
-    *
-    * @param  string  $token
-    * @return void
-    */
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ResetPasswordNotification($token));
-    }
-
-    /**
      * Relations
      */
     public function country()
