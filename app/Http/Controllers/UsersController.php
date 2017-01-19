@@ -14,10 +14,13 @@ class UsersController extends Controller
 
     /**
      * UsersController constructor.
+     *
      * @param User $user
      */
     public function __construct(User $user)
     {
+        parent::__construct();
+
         $this->user = $user;
     }
 

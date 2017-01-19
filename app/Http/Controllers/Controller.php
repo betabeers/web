@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\{Route, View};
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
 
 class Controller extends BaseController
 {
@@ -18,7 +17,13 @@ class Controller extends BaseController
         View::share('cssClass', $this->getCssClassFromRouteName(Route::currentRouteName()));
     }
 
-    private function getCssClassFromRouteName($routeName)
+    /**
+     * Get route name and transform it in css classes
+     *
+     * @param $routeName
+     * @return string
+     */
+    private function getCssClassFromRouteName($routeName) : string
     {
         foreach (explode('.', $routeName) as $key => $segment) {
             if ($key == 0) {
@@ -27,6 +32,7 @@ class Controller extends BaseController
                 $classArray[$key] = $classArray[$key-1].'-'.$segment;
             }
         }
+
         return implode(' ', $classArray);
     }
 }
