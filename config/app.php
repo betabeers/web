@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         GatherContent\LaravelFractal\LaravelFractalServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
 
         /*
          * Application Service Providers...

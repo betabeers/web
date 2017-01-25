@@ -7,7 +7,9 @@ Homestead.yaml
 .env
 .DS_Store
 composer.phar
-/public/css/*
+/public/css/
+/public/js/
+/public/fonts
 _ide_helper.php
 .phpstorm.meta.php
 *~

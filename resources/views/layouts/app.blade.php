@@ -11,9 +11,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/styles.css" rel="stylesheet">
+    <link href="{{ elixir("css/styles.css") }}" rel="stylesheet">
+
+    <!--[if IE]>
+    <link href="{{ elixir("css/ie.css") }}" rel="stylesheet">
+    <![endif]-->
 
     <!-- Scripts -->
+    <script type="text/javascript" src="{{ elixir("js/all.js") }}"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -50,8 +55,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('users.login') }}">Login</a></li>
-                            <li><a href="{{ route('users.register') }}">Register</a></li>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/register">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -60,13 +65,13 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ route('users.logout') }}"
+                                        <a href="/logout"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('users.logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="/logout" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>

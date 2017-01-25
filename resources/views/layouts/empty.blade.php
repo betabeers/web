@@ -11,9 +11,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/styles.css" rel="stylesheet">
+    <link href="{{ elixir("css/styles.css") }}" rel="stylesheet">
+
+    <!--[if IE]>
+        <link href="{{ elixir("css/ie.css") }}" rel="stylesheet">
+    <![endif]-->
 
     <!-- Scripts -->
+    <script type="text/javascript" src="{{ elixir("js/all.js") }}"></script>
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
