@@ -10,11 +10,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    protected $hidden = ['password', 'remember_token'];
     protected $fillable = [
         'name', 'email', 'password', 'slug', 'body', 'phone', 'freelance', 'country_id', 'city_id', 'province_id',
         'location', 'portafolio', 'lookingfor', 'unemployed', 'can_contact', 'newsletter', 'alert_commercial',
@@ -23,39 +19,26 @@ class User extends Authenticatable
         'delicius_url', 'pinboard_url', 'itunes_url', 'android_url', 'chrome_url', 'masterbranch_url', 'bitbucket_url',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    /**
-     * Find user by slug and id
-     *
-     * @param $slug
-     * @param $id
-     */
     public function findBySlugAndId($slug, $id)
     {
         return $this->where('slug', $slug)->findOrFail($id);
     }
 
-    /**
-     * Encrypt password automatically
-     *
-     * @param $password
-     */
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
     }
 
-    /**
-     * Relations
-     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
+    }
+
+    public function tags()
+    {
+        return $this->morphMany(Tag::class, 'taggable');
+    }
+
     public function country()
     {
         return $this->belongsTo(Country::class);
@@ -69,5 +52,20 @@ class User extends Authenticatable
     public function city()
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+
+    public function followers()
+    {
+        return $this->hasMany(UserFollow::class, 'to_id');
+    }
+
+    public function followings()
+    {
+        return $this->hasMany(UserFollow::class, 'from_id');
     }
 }
