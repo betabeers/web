@@ -29,11 +29,6 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ResetPasswordNotification($token));
-    }
-
     public function tags()
     {
         return $this->morphMany(Tag::class, 'taggable');
