@@ -166,8 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
-        GatherContent\LaravelFractal\LaravelFractalServiceProvider::class,
-        Dingo\Api\Provider\LaravelServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -230,7 +229,6 @@ return [
         /**
          * Aliases
          */
-        'Fractal' => GatherContent\LaravelFractal\LaravelFractalFacade::class,
 
     ],
 

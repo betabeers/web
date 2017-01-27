@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Api\BaseApiController;
 use App\Models\User;
-use Dingo\Api\Exception\ResourceException;
+use Exception;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -27,14 +27,14 @@ class AuthController extends BaseApiController
         ]);
 
         if ($validator->fails()) {
-            throw new ResourceException("Error Processing Request", $validator->errors());
+            throw new Exception("Error Processing Request");
         }
 
         $response = $this->broker()->sendResetLink(
             $request->only('email')
         );
 
-        return $this->response->noContent();
+        return response([], 204);
     }
 
     public function broker()
