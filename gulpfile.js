@@ -2,10 +2,15 @@ const elixir = require('laravel-elixir');
 
 require('laravel-elixir-vue-2');
 
+var user = {
+    'login' : './resources/assets/js/users/recover-password.js'
+}
+
 var paths = {
     'jquery': './node_modules/jquery/dist/jquery.js',
     'bootstrap': './node_modules/bootstrap/dist/js/bootstrap.js',
     'tether': './node_modules/tether/dist/js/tether.js',
+    'user' : user,
 }
 
 /*
@@ -26,10 +31,11 @@ elixir(mix => {
            paths.jquery,
            paths.tether,
            paths.bootstrap,
+           paths.user.login,
         ],
         'public/js/all.js',
         './'
         )
         .sass('ie.scss')
-        .copy('node_modules/font-awesome/fonts', 'public/fonts');
+        .copy('node_modules/font-awesome/fonts', 'public/fonts')
 });

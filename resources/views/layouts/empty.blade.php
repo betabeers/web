@@ -25,8 +25,7 @@
         ]); ?>
     </script>
 </head>
-<!-- TODO: Dynamicly Add Controller-Action class to Body-->
-<body class="user-login">
+<body class=" {{ $cssClass }}">
     @yield('content')
 </body>
 </html>

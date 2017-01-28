@@ -14,5 +14,7 @@ Route::group(['middleware' => 'auth'], function() {
     });
 });
 
-Auth::routes();
+Route::group(['as' => 'users.'], function () {
+    Auth::routes();
+});
 
