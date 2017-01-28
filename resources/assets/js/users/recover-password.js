@@ -2,36 +2,40 @@
  * Created by fcarrascosa on 28/01/17.
  */
 
-jQuery('#modal-password-reset-form').on('submit', function(e) {
-    e.preventDefault();
+jQuery(document).ready(function() {
 
-    $this = jQuery(this);
+    jQuery('#modal-password-reset-form').on('submit', function (e) {
+        e.preventDefault();
 
-    $url = jQuery(this).attr('action');
-    $method = jQuery(this).attr('method');
+        $this = jQuery(this);
 
-    $params = {};
+        $url = jQuery(this).attr('action');
+        $method = jQuery(this).attr('method');
 
-    jQuery(this).find('input').each( function(){
-        $name = jQuery(this).attr('name');
-        $value = jQuery(this).val();
+        $params = {};
 
-        $params[$name] = $value;
+        jQuery(this).find('input').each(function () {
+            $name = jQuery(this).attr('name');
+            $value = jQuery(this).val();
 
-    } );
-    console.log($url);
+            $params[$name] = $value;
 
-    jQuery.ajax({
-        url: $url,
-        method: $method,
-        data: $params,
-        error: function(response) {
-            console.log(response);
-            $this.find('.messages').empty().append('<div class="alert alert-danger">' + response.responseJSON.message + '</div>').slideDown().delay(1500).slideUp();
-        },
-        success: function(response) {
-            $this.find('.messages').empty().append('<div class="alert alert-success">Te hemos enviado un email</div>').slideDown().delay(1500).slideUp();
-        }
-    })
+        });
+        console.log($url);
 
-})
+        jQuery.ajax({
+            url: $url,
+            method: $method,
+            data: $params,
+            error: function (response) {
+                console.log(response);
+                $this.find('.messages').empty().append('<div class="alert alert-danger">' + response.responseJSON.message + '</div>').slideDown().delay(1500).slideUp();
+            },
+            success: function (response) {
+                $this.find('.messages').empty().append('<div class="alert alert-success">Te hemos enviado un email</div>').slideDown().delay(1500).slideUp();
+            }
+        })
+
+    });
+
+});
