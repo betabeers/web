@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <a class="btn btn-link" href="#" data-toggle="modal" data-target="#modal-password-reset" aria-hidden="true">
-                            {{ trans('users.forgotPassword') }}
+                            {{ __('users.forgotPassword') }}
                         </a>
                     </div>
                 </form>
