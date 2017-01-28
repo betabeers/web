@@ -4,7 +4,8 @@ namespace Tests\Browser;
 
 use App\Models\User;
 use Tests\DuskTestCase;
-use Tests\Browser\Pages\Auth\LoginPage;
+use Tests\Browser\Pages\Auth\Login;
+use Tests\Browser\Pages\Auth\Register;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class AuthTest extends DuskTestCase
@@ -14,16 +15,16 @@ class AuthTest extends DuskTestCase
     /**
      * @group auth
      */
-    public function test_login_page()
+    public function testLoginPage()
     {
-        factory(User::class)->create([
+        $user = factory(User::class)->create([
             'email' => 'user@betabeers.com',
             'password' => 'secret'
         ]);
 
-        $this->browse(function ($browser) {
-            $browser->visit(new LoginPage)
-                    ->type('email', 'user@betabeers.com')
+        $this->browse(function ($browser) use ($user) {
+            $browser->visit(new Login)
+                    ->type('email', $user->email)
                     ->type('password', 'secret')
                     ->press('Login')
                     ->assertPathIs('/');
@@ -33,20 +34,66 @@ class AuthTest extends DuskTestCase
     /**
      * @group auth
      */
-    public function test_login_page_and_fails()
+    public function testLoginPageAndFails()
     {
-        factory(User::class)->create([
-            'email' => 'user@betabeers.com',
-            'password' => 'secret'
+        $user = factory(User::class)->create([
+            'email' => 'user@betabeers.com'
         ]);
 
-        $this->browse(function ($browser) {
-            $browser->visit(new LoginPage)
-                    ->type('email', 'user@betabeers.com')
+        $this->browse(function ($first, $second) use ($user) {
+            $second->visit(new Login)
+                    ->type('email', $user->email)
                     ->type('password', 'wrongpassword')
                     ->press('Login')
                     ->assertPathIs('/login')
-                    ->assertSee('Estas credenciales no coinciden con nuestros registros.');
+                    ->assertSee(__('auth.failed'));
+       });
+    }
+
+    /**
+     * @group auth
+     */
+    public function testRegisterPage()
+    {
+        $this->browse(function ($browser) {
+            $browser->visit(new Register)
+                    ->type('name', 'Betabeers')
+                    ->type('email', 'admin@betabeers.com')
+                    ->type('password', 'secret')
+                    ->type('password_confirmation', 'secret')
+                    ->press('Register')
+                    ->assertPathIs('/');
+        });
+    }
+
+    /**
+     * @group auth
+     */
+    public function testRegisterPageAndFails()
+    {
+        $this->browse(function ($browser) {
+            $browser->visit(new Register)
+                    ->type('name', 'Betabeers')
+                    ->type('email', 'admin@betabeers.com')
+                    ->type('password', 'secret')
+                    ->type('password_confirmation', 'wrongpassword')
+                    ->press('Register')
+                    ->assertPathIs('/register')
+                    ->assertSee(__('validation.confirmed', ['attribute' => __('validation.attributes.password')]));
+        });
+    }
+
+    /**
+     * @group auth
+     */
+    public function testLogout()
+    {
+        $user = factory(User::class)->create();
+
+        $this->browse(function ($browser) use ($user) {
+            $browser->loginAs($user)
+                    ->visit('/logout')
+                    ->assertPathIs('/login');
         });
     }
 }
