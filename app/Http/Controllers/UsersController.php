@@ -31,9 +31,11 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response|\Illuminate\View\View
      * @internal param $name
      */
-    public function show(Request $request)
+    public function show(Request $request, string $slug, int $id)
     {
-        return view('users.show', ['user' => $request->user()]);
+        $user = $this->user->findBySlugAndId($slug, $id)->firstOrFail();
+
+        return view('users.show', ['user' => $user]);
     }
 
     /**
