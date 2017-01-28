@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Notification;
 use Validator;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class AuthController extends BaseApiController
 {
@@ -27,7 +28,11 @@ class AuthController extends BaseApiController
         ]);
 
         if ($validator->fails()) {
-            throw new Exception("Error Processing Request");
+            return $this->errorResponse(
+                $validator->messages()->first(),
+                422,
+                $validator->messages()->all()
+            );
         }
 
         $response = $this->broker()->sendResetLink(
