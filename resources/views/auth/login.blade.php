@@ -77,7 +77,7 @@
 
                     <div class="modal-body">
 
-                        <form method="POST" action="/api/password/reset" id="modal-password-reset-form">
+                        <form method="POST" action="{{ route('api.v1.password_reset') }}" id="modal-password-reset-form">
                             <div class="form-group">
                                 <label for="email" class="form-control-label">
                                     Email

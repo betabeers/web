@@ -9,6 +9,10 @@
         a {
           font-size: 1em;
           color: $white;
+          transition: all .5s;
+          &:hover{
+            letter-spacing: .2rem;
+          }
         }
       }
     }
