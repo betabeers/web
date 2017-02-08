@@ -24,9 +24,11 @@
                                     </a>
                                 </h1>
                             @else
-                            <a class="navbar-brand" href="#">
-                                ßetabeers
-                            </a>
+                                <div class="header-navigation-brand_title">
+                                    <a class="navbar-brand" href="#">
+                                        ßetabeers
+                                    </a>
+                                </div>
                             @endif
                         </div>
                     </div>
@@ -70,6 +72,7 @@
                                                 {{ Auth::user()->name }} <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="header-navigation-menu_user" aria-expanded="false">
+                                                <a class="dropdown-item" href="{{ route('users.edit') }}">Edit Account</a>
                                                 <a class="dropdown-item" href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                     Logout
                                                 </a>

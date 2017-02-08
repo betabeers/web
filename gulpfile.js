@@ -26,7 +26,9 @@ var paths = {
 
 elixir(mix => {
     mix.sass('styles.scss')
-       // .webpack('app.js')
+        .sass('ie.scss')
+
+// .webpack('app.js')
        .scripts([
            paths.jquery,
            paths.tether,
@@ -36,6 +38,5 @@ elixir(mix => {
         'public/js/all.js',
         './'
         )
-        .sass('ie.scss')
         .copy('node_modules/font-awesome/fonts', 'public/fonts')
 });

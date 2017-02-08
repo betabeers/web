@@ -4,7 +4,6 @@
 
   &-login {
     align-items: center;
-    background: $color-background;
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -41,5 +40,7 @@
     }
 
   }
+  &-edit {
 
+  }
 }

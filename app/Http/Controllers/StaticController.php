@@ -6,15 +6,20 @@ use Illuminate\Http\Request;
 
 class StaticController extends Controller
 {
-    public function info () {
+    public function info()
+    {
         return view('static/info');
     }
 
-    public function organize () {
+    public function organize()
+    {
         return view('static/organize');
     }
 
-    public function codeOfConduct() {
+    public function codeOfConduct()
+    {
         return view('static/code-of-conduct');
     }
+
+
 }
