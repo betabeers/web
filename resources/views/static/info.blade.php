@@ -12,6 +12,9 @@
 @section('content')
     <main>
         <h1 class="static-title text-center">¿Qué es Betabeers?</h1>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/h7nUC86FyR0" allowfullscreen></iframe>
+        </div>
         <section class="static static-info">
             <div class="container">
 
@@ -38,10 +41,6 @@
                     5 años después ßetabeers se organiza en 30 sedesy es un movimiento ligado tanto a la comunidad de
                     desarrolladores como de emprendedores de las diferentes ciudades donde tiene presencia.
                 </p>
-
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/h7nUC86FyR0" allowfullscreen></iframe>
-                </div>
             </div>
         </section>
     </main>
