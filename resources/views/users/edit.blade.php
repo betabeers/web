@@ -1,3 +1,4 @@
+{{--{{ dd($user->lookingfor) }}--}}
 @extends('layouts.app')
 
 @section('content')
@@ -64,17 +65,15 @@
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label for="body" class="control-label">Description</label>
-                                            <textarea id="body" class="form-control" name="body">
-                                                {{ $user->body }}
-                                            </textarea>
+                                            <textarea id="body" class="form-control" name="body">{{ $user->body }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label for="lookingfor" class="control-label">What do you expect from ßetabeers?</label>
-                                            <textarea id="lookingfor" class="form-control" name="lookingfor">
-                                                {{ $user->lookingfor }}
-                                            </textarea>
+                                            <textarea id="lookingfor" class="form-control" name="lookingfor">{{ $user->lookingfor }}</textarea>
+
+
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -116,7 +115,73 @@
                                             <input type="text" class="form-control" id="facebook-url" name="facebook_url" placeholder="http://facebook.com/betabeers" value="{{ $user->facebook_url }}">
                                         </div>
                                     </div>
+                                </div><div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="github_url" class="control-label">Github:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-github"></i>
+                                            </div>
+                                            <input type="text" class="form-control" id="github-url" name="github_url" placeholder="http://github.com/betabeers" value="{{ $user->facebook_url }}">
+                                        </div>
+                                    </div>
                                 </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="linkedin_url" class="control-label">Linkedin:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-linkedin"></i>
+                                            </div>
+                                            <input type="text" class="form-control" id="linkedin-url" name="linkedin_url" placeholder="http://linkedin.com/in/betabeers" value="{{ $user->linkedin_url }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="youtube_url" class="control-label">YouTube:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-youtube"></i>
+                                            </div>
+                                            <input type="text" class="form-control" id="youtube-url" name="youtube_url" placeholder="http://youtube.com/betabeers" value="{{ $user->youtube_url }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="dribbble_url" class="control-label">Dribbble:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-dribbble"></i>
+                                            </div>
+                                            <input type="text" class="form-control" id="dribbble-url" name="dribbble_url" placeholder="http://dribbble.com/betabeers" value="{{ $user->dribbble_url }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="stackoverflow_url" class="control-label">Stackoverflow:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-stack-overflow"></i>
+                                            </div>
+                                            <input type="text" class="form-control" id="stackoverflow-url" name="stackoverflow_url" placeholder="http://stackoverflow.com/users/0000000/betabeers" value="{{ $user->linkedin_url }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="url" class="control-label">Web / Blog:</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-chrome"></i>
+                                            </div>
+                                            <input type="text" class="form-control" id="url" name="url" placeholder="http://betabeers.com" value="{{ $user->url }}">
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary">
                                         <span>Submit</span>
