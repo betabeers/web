@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/', ['as' => 'index', 'uses' => 'HomeController@index']);
 
     Route::group(['prefix' => 'user', 'as' => 'users.'], function () {
@@ -18,3 +18,7 @@ Route::group(['as' => 'users.'], function () {
     Auth::routes();
 });
 
+Route::group(['as' => 'auth.'], function () {
+    Route::get('auth/twitter', ['as' => 'twitter.redirect', 'uses' => 'Auth\Twitter@redirectToProvider']);
+    Route::get('auth/twitter/callback', ['as' => 'twitter.callback', 'uses' => 'Auth\Twitter@handleProviderCallback']);
+});
