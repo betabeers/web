@@ -54,6 +54,9 @@
                         </a>
                     </div>
                 </form>
+                <a href="{{ route('auth.twitter.redirect') }}" class="btn btn-primary">
+                    <i class="fa fa-twitter"></i> {{ trans('users.login.twitter') }}
+                </a>
             </div>
             <div class="text-center">
                 <a href="" class="login-back">
