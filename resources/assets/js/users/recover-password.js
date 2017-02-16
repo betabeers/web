@@ -26,10 +26,11 @@ jQuery(document).on('submit', '#modal-password-reset-form', function (e) {
         method: $method,
         data: $params,
         error: function (response) {
-            $this.find('.messages').empty().append('<div class="alert alert-danger">' + response.responseJSON.message + '</div>').slideDown().delay(1500).slideUp();
+            response = response.responseJSON;
+            $this.find('.messages').empty().append('<div class="alert alert-danger">' + response.message + '</div>').slideDown().delay(5000).slideUp();
         },
         success: function (response) {
-            $this.find('.messages').empty().append('<div class="alert alert-success">Te hemos enviado un email</div>').slideDown().delay(1500).slideUp();
+            $this.find('.messages').empty().append('<div class="alert alert-success">' + response.message + '</div>').slideDown().delay(5000).slideUp();
         }
     })
 

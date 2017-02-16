@@ -7,7 +7,7 @@
  */
 ?>
 
-<header id="header" class="header sticky-top">
+<header id="header" class="header">
     <nav class="navbar navbar-toggleable-sm">
         <div class="container">
             <div class="header-navigation">
