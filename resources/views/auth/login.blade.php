@@ -4,12 +4,12 @@
         <div class="login">
             <h1 class="login-title text-center">ßetabeers</h1>
             <div class="login-container">
-                <form class="form-horizontal login-form" role="form" method="POST" action="/login">
+                <form class="form-horizontal login-form" method="POST" action="/login">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('email') ? 'has-herror' : '' }}">
-                        <label for="email" class="login-form-label login-form-label_email form-control-label">
-                            E-mail Address
+                        <label for="login-form-email" class="login-form-label login-form-label_email form-control-label">
+                            {{ __('users.email') }}
                         </label>
                         <input name="email" type="email" id="login-form-email" class="form-control login-form-input login-form-input_email" required autofocus>
                         @if ($errors->has('email'))
@@ -20,10 +20,10 @@
                     </div>
 
                     <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password" class="login-form-label login-form-label_password form-control-label">
-                            Password
+                        <label for="login-form-password" class="login-form-label login-form-label_password form-control-label">
+                            {{ __('users.password') }}
                         </label>
-                        <input name="password" type="password" id="login-form-email" class="form-control login-form-input login-form-input_password" required>
+                        <input name="password" type="password" id="login-form-password" class="form-control login-form-input login-form-input_password" required>
 
                         @if ($errors->has('password'))
                             <span class="help-block">
@@ -35,7 +35,7 @@
                     <div class="form-group">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="remember"> Remember Me
+                                <input type="checkbox" name="remember"> {{ __('users.remember') }}
                             </label>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         </a>
                     </div>
                     <div class="form-group">
-                        <a class="btn btn-link" href="#" data-toggle="modal" data-target="#modal-password-reset" aria-hidden="true">
+                        <a class="btn btn-link pl-0" href="#" data-toggle="modal" data-target="#modal-password-reset" aria-hidden="true">
                             {{ __('users.forgotPassword') }}
                         </a>
                     </div>
@@ -79,14 +79,14 @@
 
                         <form method="POST" action="{{ route('api.v1.password_reset') }}" id="modal-password-reset-form">
                             <div class="form-group">
-                                <label for="email" class="form-control-label">
-                                    Email
+                                <label for="modal-password-reset-form-email" class="form-control-label">
+                                    {{__('users.email')}}
                                 </label>
-                                <input type="email" name="email" placeholder="email" class="form-control" required>
+                                <input id="modal-password-reset-form-email" type="email" name="email" placeholder="{{ __('users.email') }}" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-secondary">
-                                    <span>Recuperar Contraseña</span>
+                                    <span>{{ __('users.forgotPassword') }}</span>
                                 </button>
                             </div>
                             <div class="messages" style="display: none"></div>

@@ -4,6 +4,10 @@ return [
 
     'login' => 'Acceder',
     'register' => 'Registrarme',
-    'forgotPassword' => 'Recuperar cuenta'
+    'email' => 'Correo electrónico',
+    'password' => 'Contraseña',
+    'remember' => 'Recordar',
+    'forgotPassword' => 'Recuperar contraseña',
+    'passwordRecovery' => 'Recuperación de contraseña'
 
 ];
