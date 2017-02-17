@@ -1,4 +1,3 @@
-{{--{{ dd($user->lookingfor) }}--}}
 @extends('layouts.app')
 
 @section('content')
@@ -6,14 +5,14 @@
 <div class="container">
     <div class="row">
         <div class="col-4 hidden-sm-down">
-            TODO: Navegación por paneles
+            @include('users.edit.sidebar')
         </div>
         <div class="col-12 col-md-8">
             <form id="users-edit-form edit" role="form" method="POST" action="{{ route('users.update') }}">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
                 <div class="card">
-                    <div class="edit-general">
+                    <div id="edit-general" class="edit-general">
                         <div class="card-header">
                             General Information
                         </div>
@@ -105,7 +104,7 @@
                 </div>
                 <br>
                 <div class="card">
-                    <div class="edit-social">
+                    <div id="edit-social" class="edit-social">
                         <div class="card-header">
                             Contact Information
                         </div>
@@ -212,7 +211,7 @@
                 </div>
                 <br>
                 <div class="card">
-                    <div class="edit-skills">
+                    <div id="edit-skills" class="edit-skills">
                         <div class="card-header">
                             Skills and challenges
                         </div>
