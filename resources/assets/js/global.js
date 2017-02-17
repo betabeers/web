@@ -36,9 +36,10 @@ function getDocumentPosition() {
 function smoothScroll (link, time) {
 
     target = link.attr('href');
+    headerHeight = getHeaderHeight();
 
     jQuery('html, body').animate({
-        scrollTop: jQuery(target).offset().top
+        scrollTop: jQuery(target).offset().top - headerHeight
     }, time);
 
     return true;
