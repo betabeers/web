@@ -63,13 +63,15 @@ jQuery(window).on('scroll', function () {
     links = jQuery('.navigation-item-link');
     headerHeight = getHeaderHeight();
 
-    links.each(
-        function()
-        {
-            toggleActiveClass(this, scroll, headerHeight);
-        }
-    );
+    if (links.length > 0) {
 
-    repositionSidebar(scroll, headerHeight);
+        links.each(
+            function () {
+                toggleActiveClass(this, scroll, headerHeight);
+            }
+        );
 
+        repositionSidebar(scroll, headerHeight);
+
+    }
 });
