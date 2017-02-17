@@ -1,42 +1,45 @@
 /**
- * Created by fcarrascosa on 17/02/17.
+ *  @fileOverview Manages the global functions for the web
+ *  @author Fernando Carrascosa <fcarrascosa@fcarrascosa.es>
+ *  @name Global
+ *  @version 0.1
+ *  @see Global
  */
+
+
 /**
- * Let's Get the Header's Height
- *
- * @returns {Number}
+ * Gets the Header's Height
+ * @returns {Number} The #header's height
  */
 
 function getHeaderHeight(){
-    headerHeight = jQuery('#header').height();
+    var headerHeight = jQuery('#header').height();
     return headerHeight;
 }
 
 /**
- * Let's Get the Scroll Position
- *
+ * Gets the document Scroll position
  * @returns {Number}
  */
 
 function getDocumentPosition() {
 
-    scrollPosition = jQuery(document).scrollTop();
+    var scrollPosition = jQuery(document).scrollTop();
     return scrollPosition;
 }
 
 /**
- * Let's smooth-scroll to self-page items
+ * Makes Scroll Smooth when click in 'current page target' links
+ * @param {Object} link The clicked link
+ * @param {Number} time The time in ms the scroll lasts
  *
- * @param {Object} link
- * @param {Number} time
- *
- * @returns {Boolean}
+ * @returns {Boolean} Always True
  */
 
 function smoothScroll (link, time) {
 
-    target = link.attr('href');
-    headerHeight = getHeaderHeight();
+    var target = link.attr('href');
+    var headerHeight = getHeaderHeight();
 
     jQuery('html, body').animate({
         scrollTop: jQuery(target).offset().top - headerHeight
@@ -47,6 +50,6 @@ function smoothScroll (link, time) {
 
 
 jQuery(document).on('click', 'a[href*="#"]:not([href="#"])', function(){
-    link = jQuery(this);
+    var link = jQuery(this);
     smoothScroll(link, 500);
 });
