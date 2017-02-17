@@ -3,15 +3,19 @@ const elixir = require('laravel-elixir');
 require('laravel-elixir-vue-2');
 
 var user = {
-    'login' : './resources/assets/js/users/recover-password.js'
-}
+    'login' : './resources/assets/js/users/recover-password.js',
+    'edit' : {
+        'sidebar' : './resources/assets/js/users/edit/sidebar.js'
+    }
+};
 
 var paths = {
     'jquery': './node_modules/jquery/dist/jquery.js',
     'bootstrap': './node_modules/bootstrap/dist/js/bootstrap.js',
     'tether': './node_modules/tether/dist/js/tether.js',
-    'user' : user,
-}
+    'global': './resources/assets/js/global.js',
+    'user' : user
+};
 
 /*
  |--------------------------------------------------------------------------
@@ -33,7 +37,9 @@ elixir(mix => {
            paths.jquery,
            paths.tether,
            paths.bootstrap,
+           paths.global,
            paths.user.login,
+           paths.user.edit.sidebar,
         ],
         'public/js/all.js',
         './'
