@@ -1,25 +1,32 @@
 /**
- * Created by fcarrascosa on 17/02/17.
+ *  @fileOverview Manages the functions for the Users section
+ *  @author Fernando Carrascosa <fcarrascosa@fcarrascosa.es>
+ *  @name Users
+ *  @version 0.1
+ *  @see module:Users
  */
 
+/** @module Users */
+
 /**
- * Let's Toggle active Class when Scroll
+ * Toggles active Class when Scroll
  *
- * @param {Object} link
- * @param {Number} scroll
- * @param {Number} headerHeight
+ * @param {Object} link The current nav link
+ * @param {Number} scroll The current scroll position
+ * @param {Number} headerHeight The current #header height
+ * @memberOf module:Users
  *
- * @returns {Boolean}
+ * @returns {Boolean} True if toggled active class of an element, otherwise, False
  */
 
 function toggleActiveClass ( link, scroll, headerHeight ) {
-    linkTarget = jQuery(link).attr('href');
-    linkParent = jQuery(link).parent();
+    var linkTarget = jQuery(link).attr('href');
+    var linkParent = jQuery(link).parent();
 
-    section = jQuery(linkTarget);
-    sectionTop = section.offset().top;
-    sectionHeight = section.height();
-    sectionBottom = sectionTop + sectionHeight;
+    var section = jQuery(linkTarget);
+    var sectionTop = section.offset().top;
+    var sectionHeight = section.height();
+    var sectionBottom = sectionTop + sectionHeight;
 
     if ((sectionTop) <= (scroll + headerHeight) && sectionBottom > (scroll - headerHeight)) {
         linkParent.siblings().removeClass('active');
@@ -32,22 +39,23 @@ function toggleActiveClass ( link, scroll, headerHeight ) {
 }
 
 /**
- * Let's Change Sidebar's position when Scroll
+ * Changes Sidebar's position when Scroll
  *
- * @param {Number} scroll
- * @param {Number} headerHeight
+ * @param {Number} scroll The current scroll position
+ * @param {Number} headerHeight The current #header height
+ * @memberOf module:Users
  *
- * @returns {Boolean}
+ * @returns {Boolean} True if it changed position of sidebar, False if resets it
  */
 
 function repositionSidebar ( scroll , headerHeight) {
-    sidebar = jQuery('.edit-sidebar');
-    sidebarParent = sidebar.parent();
-    sidebarParentTop = sidebarParent.offset().top;
+    var sidebar = jQuery('.edit-sidebar');
+    var sidebarParent = sidebar.parent();
+    var sidebarParentTop = sidebarParent.offset().top;
 
     if (sidebarParentTop < (scroll + headerHeight)) {
         sidebar.css({
-           'top': scroll,
+           'top': scroll
         });
     } else {
         sidebar.removeAttr('style');
@@ -59,9 +67,9 @@ function repositionSidebar ( scroll , headerHeight) {
 
 jQuery(window).on('scroll', function () {
 
-    scroll = getDocumentPosition();
-    links = jQuery('.navigation-item-link');
-    headerHeight = getHeaderHeight();
+    var scroll = getDocumentPosition();
+    var links = jQuery('.navigation-item-link');
+    var headerHeight = getHeaderHeight();
 
     if (links.length > 0) {
 
