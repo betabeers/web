@@ -48,6 +48,41 @@ function smoothScroll (link, time) {
     return true;
 }
 
+/**
+ * Sends a form via AJAX
+ * @param {String} formId The form "id" attribute
+ * @param {String} formAction The form "action" attribute
+ * @param {String} formMethod The form "method" attribute
+ *
+ * @returns {Boolean} Always True.
+ */
+
+function ajaxForm (formId, formAction,formMethod) {
+    var $this = jQuery('#' + formId);
+    var $params = {};
+
+    $this.find('input').each(function () {
+        var $name = jQuery(this).attr('name');
+        var $value = jQuery(this).val();
+
+        $params[$name] = $value;
+    });
+
+    jQuery.ajax({
+        url: formAction,
+        method: formMethod,
+        data: $params,
+        error: function (response) {
+            response = response.responseJSON;
+            $this.find('.messages').empty().append('<div class="alert alert-danger">' + response.message + '</div>').slideDown().delay(5000).slideUp();
+        },
+        success: function (response) {
+            $this.find('.messages').empty().append('<div class="alert alert-success">' + response.message + '</div>').slideDown().delay(5000).slideUp();
+        }
+    });
+
+    return true;
+}
 
 jQuery(document).on('click', 'a[href*="#"]:not([href="#"])', function(){
     var link = jQuery(this);

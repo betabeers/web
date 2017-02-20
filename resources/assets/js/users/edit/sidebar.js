@@ -1,12 +1,10 @@
 /**
  *  @fileOverview Manages the functions for the Users section
  *  @author Fernando Carrascosa <fcarrascosa@fcarrascosa.es>
- *  @name Users
+ *  @module Users
  *  @version 0.1
  *  @see module:Users
  */
-
-/** @module Users */
 
 /**
  * Toggles active Class when Scroll
