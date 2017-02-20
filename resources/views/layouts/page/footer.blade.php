@@ -134,7 +134,7 @@
             <hr>
             <div class="col-12 text-center">
                 <div class="footer-copyright">
-                    © 2010 - {{ date('Y') }} ßetabeers | {{ trans('footer.allRigtsReserved') }}
+                    © 2010 - {{ date('Y') }} ßetabeers | {{ trans('footer.allRightsReserved') }}
                 </div>
             </div>
         </div>
