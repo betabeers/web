@@ -55,12 +55,12 @@
                                     @if( Auth::guest() )
 
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link btn btn-link">
+                                            <a href="{{ Route('users.login') }}" class="nav-link btn btn-link">
                                                 Log in
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link btn btn-primary">
+                                            <a href="{{ Route('users.register') }}" class="nav-link btn btn-primary">
                                                 Register
                                             </a>
                                         </li>
