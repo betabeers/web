@@ -44,7 +44,7 @@
                         <button type="submit" class="btn btn-primary">
                             {{ trans('users.login') }}
                         </button>
-                        <a href="" class="btn btn-secondary">
+                        <a href="{{ Route('users.register') }}" class="btn btn-secondary">
                             {{ trans('users.register') }}
                         </a>
                     </div>
@@ -56,7 +56,7 @@
                 </form>
             </div>
             <div class="text-center">
-                <a href="/" class="login-back">
+                <a href="" class="login-back">
                     Home
                 </a>
             </div>
