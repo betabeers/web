@@ -220,8 +220,10 @@
                                 <div class="row">
                                     <div class="col-12 col-md-6">
                                         <p class="h4">I'm the best in:</p>
-                                        <select id="category-id" name="category_id" class="form-control">
-
+                                        <select id="category-id" name="job_role" class="form-control">
+                                            @foreach(config('betabeers.users.job_roles') as $job_role):
+                                                <option value="{{ $job_role }}" {{ $user->job_role === $job_role ? 'selected' : '' }}>{{ trans('users.job_roles.'.$job_role) }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-12 col-md-6">
