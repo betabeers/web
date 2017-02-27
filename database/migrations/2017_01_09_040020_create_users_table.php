@@ -47,6 +47,7 @@ class CreateUsersTable extends Migration
             $table->string('company_email')->nullable();
             $table->string('company_cif')->nullable();
             $table->string('company_addresses')->nullable();
+            $table->string('job_role');
             $table->string('facebook_id', 30)->nullable()->unique();
             $table->string('twitter_id', 30)->nullable()->unique();
             $table->string('google_id', 30)->nullable()->unique();

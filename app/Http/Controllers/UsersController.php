@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\Types\Integer;
 
 class UsersController extends Controller
 {
@@ -74,5 +76,14 @@ class UsersController extends Controller
         $request->user()->delete();
 
         return redirect()->route('index');
+    }
+
+    /**
+     * @param Number $userId
+     */
+    public function followUser( Number $userId )
+    {
+
+        Auth::user()->id;
     }
 }

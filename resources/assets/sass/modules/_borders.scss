@@ -1,0 +1,15 @@
+.border {
+  border: solid 1px $card-border-color;
+  &-right {
+    border-right: solid 1px $card-border-color;
+  }
+  &-left {
+    border-left: solid 1px $card-border-color;
+  }
+  &-top {
+    border-top: solid 1px $card-border-color;
+  }
+  &-bottom {
+    border-bottom: solid 1px $card-border-color;
+  }
+}

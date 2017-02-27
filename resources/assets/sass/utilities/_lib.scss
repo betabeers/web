@@ -6,5 +6,7 @@
 // to ".scss" and add "_" to the beginning) and import them here.
 
 @import 'lib/pesticide';
+@import 'lib/tether/tether';
+@import 'lib/jquery-plugins/chosen';
 @import 'lib/bootstrap/bootstrap';
 @import 'lib/fontawesome/fontawesome';
