@@ -40,6 +40,9 @@
     }
 
   }
+
+  // Edit View
+
   &-edit {
     .edit {
       &-sidebar {
@@ -85,4 +88,22 @@
       }
     }
   }
+
+  // Show View
+
+  &-show{
+    .user {
+      @extend .card;
+      &-header {
+        @extend .card-header;
+      }
+      &-block {
+        @extend .card-block;
+      }
+      &-footer {
+        @extend .card-footer;
+      }
+    }
+  }
+
 }

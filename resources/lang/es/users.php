@@ -9,6 +9,11 @@ return [
     'remember' => 'Recordar',
     'forgotPassword' => 'Recuperar contraseña',
     'passwordRecovery' => 'Recuperación de contraseña',
+    'follow' => 'Seguir',
+    'unfollow' => 'Dejar de seguir',
+    'lookingfor' => 'En ßetabeers busco:',
+    'followers' => 'Seguidores',
+    'following' => 'Siguiendo',
 
     'job_roles' => [
         'other' => 'Otros',

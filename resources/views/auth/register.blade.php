@@ -61,6 +61,14 @@
                         </div>
 
                         <div class="form-group">
+                            <select id="job_role" name="job_role" class="form-control">
+                                @foreach(config('betabeers.users.job_roles') as $job_role):
+                                <option value="{{ $job_role }}">{{ trans('users.job_roles.'.$job_role) }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Register
