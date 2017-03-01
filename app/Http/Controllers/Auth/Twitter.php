@@ -23,8 +23,9 @@ class Twitter extends Controller
         }
 
         $userData = [
+            'twitter_id'    => $user->id,
             'email'         => $user->email,
-            'twitter_id'    => $user->id
+            'name'          => $user->name
         ];
 
         $authUser = User::firstOrCreate($userData);
