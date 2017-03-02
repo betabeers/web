@@ -22,12 +22,6 @@ class User extends Authenticatable
         'last_login',
         'banned',
         'date_newsletter',
-        'facebook_id',
-        'twitter_id',
-        'google_id',
-        'github_id',
-        'linkedin_id',
-        'amazon_id',
         'visits_google',
         'visits_finder',
         'remember_token'
