@@ -82,7 +82,7 @@
                                         </label>
                                         <div class="row">
                                             <div class="col-12 col-md-6">
-                                                <input type="file" name="profile_image" id="js-upload-files" class="form-control hidden-sm-up">
+                                                {{--<input type="file" name="profile_image" id="js-upload-files" class="form-control hidden-sm-up">--}}
                                                 <div class="droppable hidden-sm-down">
                                                     Just Drag and Drop your files here
                                                 </div>
