@@ -24,7 +24,10 @@ class User extends Authenticatable
         'date_newsletter',
         'visits_google',
         'visits_finder',
-        'remember_token'
+        'remember_token',
+        'facebook_url',
+        'job_role',
+        'txt_tags'
     ];
 
     public function findBySlugAndId($slug, $id)

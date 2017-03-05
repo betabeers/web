@@ -25,10 +25,10 @@
                             </div>
                             <div class="col-6">
                                 <small>{{ __('users.following') }}</small><br>
-                                <!-- TODO: Add getFollowings() Method-->
-                                {{ $user->followings()->count() > 0 ? '<a class="user-followers-link" href="">': '' }}
-                                    {{ $user->followings()->count() }}
-                                {{ $user->followings()->count() > 0 ? '</a>': '' }}
+                                <!-- TODO: Add getFollowing() Method-->
+                                {!! $user->following()->count() > 0 ? '<a class="user-followers-link" href="">': '' !!}
+                                    {{ $user->following()->count() }}
+                                {!! $user->following()->count() > 0 ? '</a>': '' !!}
                             </div>
                             <div class="col-12">
                                 <a href="#" class="follow btn btn-success btn-block" data-user-id="{{ $user->id }}">
