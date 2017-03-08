@@ -226,7 +226,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 pb-1">
                                         <label class="control-label" for="txt-tags">I want to learn </label>
                                         <textarea id="txt-tags" name="txt_tags" class="form-control"></textarea>
                                     </div>
@@ -256,7 +256,7 @@
                                         </label>
                                     </div>
                                     <br>
-                                    <div class="col-12">
+                                    <div class="col-12 pt-1">
                                         <button type="submit" class="btn btn-primary">
                                             <span>Submit</span>
                                         </button>
