@@ -227,18 +227,22 @@
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-control">
-                                            <input type="checkbox" class="form-control" name="unemployed" id="unemployed" @if($user->unemployed = 1) checked @endif><label for="unemployed" class="control-label">Are you looking for a job?</label>
-                                        </div>
-                                        <div class="form-control">
-                                            <input type="checkbox" class="form-control" name="freelance" id="freelance" @if($user->freelance = 1) checked @endif><label for="freelance" class="control-label">Are you freelance?</label>
-                                        </div>
-                                        <div class="form-control">
-                                            <input type="checkbox" class="form-control" name="search_team" id="search-team" @if($user->search_team = 1) checked @endif><label for="search_team" class="control-label">Are you looking for a team?</label>
-                                        </div>
-                                        <div class="form-control">
-                                            <input type="checkbox" class="form-control" name="can_contact" id="can-contact" @if($user->can_contact = 1) checked @endif><label for="can-contact" class="control-label">Allow others to contact me</label>
-                                        </div>
+                                        <label for="unemployed" class="label-control">
+                                            <input type="checkbox" class="form-control" name="unemployed" id="unemployed" @if($user->unemployed = 1) checked @endif>
+                                            Are you looking for a job?
+                                        </label>
+                                        <label for="freelance" class="label-control">
+                                            <input type="checkbox" class="form-control" name="freelance" id="freelance" @if($user->freelance == 1) checked @endif>
+                                            Are you freelance?
+                                        </label>
+                                        <label for="search-team" class="label-control">
+                                            <input type="checkbox" class="form-control" name="search_team" id="search-team" @if($user->search_team == 1) checked @endif>
+                                            Are you looking for a team?
+                                        </label>
+                                        <label for="can-contact" class="label-control">
+                                            <input type="checkbox" class="form-control" name="can_contact" id="can-contact" @if($user->can_contact == 1) checked @endif>
+                                            Allow others to contact me
+                                        </label>
                                     </div>
                                     <div class="col-12">
                                         <label class="control-label" for="txt-tags">I want to learn </label>
