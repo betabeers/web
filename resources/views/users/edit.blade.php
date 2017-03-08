@@ -230,6 +230,7 @@
                                         <label class="control-label" for="txt-tags">I want to learn </label>
                                         <textarea id="txt-tags" name="txt_tags" class="form-control"></textarea>
                                     </div>
+                                    <br>
                                     <div class="col-12 col-md-6">
                                         <label for="unemployed" class="form-check-label">
                                             <input type="checkbox" class="form-check-input" name="unemployed" id="unemployed" @if($user->unemployed = 1) checked @endif>
@@ -243,19 +244,18 @@
                                         </label>
                                     </div>
                                     <div class="col-12 col-md-6">
-
                                         <label for="search-team" class="form-check-label">
                                             <input type="checkbox" class="form-check-input" name="search_team" id="search-team" @if($user->search_team == 1) checked @endif>
                                             Are you looking for a team?
                                         </label>
                                     </div>
                                     <div class="col-12 col-md-6">
-
                                         <label for="can-contact" class="form-check-label">
                                             <input type="checkbox" class="form-check-input" name="can_contact" id="can-contact" @if($user->can_contact == 1) checked @endif>
                                             Allow others to contact me
                                         </label>
                                     </div>
+                                    <br>
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-primary">
                                             <span>Submit</span>
