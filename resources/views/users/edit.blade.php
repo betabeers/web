@@ -256,7 +256,7 @@
                                         </label>
                                     </div>
                                     <br>
-                                    <div class="col-12 pt-1">
+                                    <div class="col-12 pt-2">
                                         <button type="submit" class="btn btn-primary">
                                             <span>Submit</span>
                                         </button>
