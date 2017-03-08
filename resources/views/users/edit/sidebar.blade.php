@@ -16,5 +16,10 @@
                 Skills and Challenges
             </a>
         </li>
+        <li class="navigation-item">
+            <a href="#edit-billing" class="navigation-item-link">
+                Billing
+            </a>
+        </li>
     </ul>
 </nav>
