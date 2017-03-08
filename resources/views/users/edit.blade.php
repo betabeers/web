@@ -228,21 +228,25 @@
                                     </div>
                                     <div class="col-12">
                                         <label for="unemployed" class="label-control">
-                                            <input type="checkbox" class="form-control" name="unemployed" id="unemployed" @if($user->unemployed = 1) checked @endif>
+                                            <input type="checkbox" class="form-check-input" name="unemployed" id="unemployed" @if($user->unemployed = 1) checked @endif>
                                             Are you looking for a job?
                                         </label>
+                                        <br>
                                         <label for="freelance" class="label-control">
-                                            <input type="checkbox" class="form-control" name="freelance" id="freelance" @if($user->freelance == 1) checked @endif>
+                                            <input type="checkbox" class="form-check-input" name="freelance" id="freelance" @if($user->freelance == 1) checked @endif>
                                             Are you freelance?
                                         </label>
+                                        <br>
                                         <label for="search-team" class="label-control">
-                                            <input type="checkbox" class="form-control" name="search_team" id="search-team" @if($user->search_team == 1) checked @endif>
+                                            <input type="checkbox" class="form-check-input" name="search_team" id="search-team" @if($user->search_team == 1) checked @endif>
                                             Are you looking for a team?
                                         </label>
+                                        <br>
                                         <label for="can-contact" class="label-control">
-                                            <input type="checkbox" class="form-control" name="can_contact" id="can-contact" @if($user->can_contact == 1) checked @endif>
+                                            <input type="checkbox" class="form-check-input" name="can_contact" id="can-contact" @if($user->can_contact == 1) checked @endif>
                                             Allow others to contact me
                                         </label>
+                                        <br>
                                     </div>
                                     <div class="col-12">
                                         <label class="control-label" for="txt-tags">I want to learn </label>
