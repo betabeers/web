@@ -19,9 +19,9 @@
                             <div class="col-6">
                                 <small>{{ __('users.followers') }}</small><br>
                                 <!-- TODO: Add getFollowers() Method-->
-                                {{ $user->followers()->count() > 0 ? '<a class="user-followers-link" href="">': '' }}
+                                {!! $user->followers()->count() > 0 ? '<a class="user-followers-link" href="">': '' !!}
                                     {{ $user->followers()->count() }}
-                                {{ $user->followers()->count() > 0 ? '</a>': '' }}
+                                {!! $user->followers()->count() > 0 ? '</a>': '' !!}
                             </div>
                             <div class="col-6">
                                 <small>{{ __('users.following') }}</small><br>
