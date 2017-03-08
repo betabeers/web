@@ -218,17 +218,36 @@
                         <div class="card-block">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-12 col-md-6">
-                                        <p class="h4">I'm the best in:</p>
+                                    <div class="col-12">
+                                        <label for="category-id" class="control-label">I'm the best in:</label>
                                         <select id="category-id" name="job_role" class="form-control">
                                             @foreach(config('betabeers.users.job_roles') as $job_role):
                                                 <option value="{{ $job_role }}" {{ $user->job_role === $job_role ? 'selected' : '' }}>{{ trans('users.job_roles.'.$job_role) }}</option>
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <p class="h4">I want to learn </p>
-                                        <textarea name="txt_tags" class="form-control"></textarea>
+                                    <div class="col-12">
+                                        <div class="form-control">
+                                            <input type="checkbox" class="form-control" name="unemployed" id="unemployed" @if($user->unemployed = 1) checked @endif><label for="unemployed" class="control-label">Are you looking for a job?</label>
+                                        </div>
+                                        <div class="form-control">
+                                            <input type="checkbox" class="form-control" name="freelance" id="freelance" @if($user->freelance = 1) checked @endif><label for="freelance" class="control-label">Are you freelance?</label>
+                                        </div>
+                                        <div class="form-control">
+                                            <input type="checkbox" class="form-control" name="search_team" id="search-team" @if($user->search_team = 1) checked @endif><label for="search_team" class="control-label">Are you looking for a team?</label>
+                                        </div>
+                                        <div class="form-control">
+                                            <input type="checkbox" class="form-control" name="can_contact" id="can-contact" @if($user->can_contact = 1) checked @endif><label for="can-contact" class="control-label">Allow others to contact me</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="control-label" for="txt-tags">I want to learn </label>
+                                        <textarea id="txt-tags" name="txt_tags" class="form-control"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">
+                                            <span>Submit</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -288,11 +307,17 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">
+                                            <span>Submit</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <br>
             </form>
         </div>
     </div>
