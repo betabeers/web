@@ -235,6 +235,63 @@
                         </div>
                     </div>
                 </div>
+                <div class="card">
+                    <div id="edit-billing" class="edit-billing">
+                        <div class="card-header">
+                            Billing Information
+                        </div>
+                        <div class="card-block">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="company-name" class="control-label">Name:</label>
+                                            <input type="text" class="form-control" id="company-name" name="company_name" value="{{ $user->company_name }}}">
+                                            @if ($errors->has('company_name'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('company_name') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="company-email" class="control-label">Email:</label>
+                                            <input type="text" class="form-control" id="company-email" name="company_email" value="{{ $user->company_email }}}">
+                                            @if ($errors->has('company_email'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('company_email') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="company-cif" class="control-label">CIF/VAT:</label>
+                                            <input type="text" class="form-control" id="company-cif" name="company_cif" value="{{ $user->company_cif }}}">
+                                            @if ($errors->has('company_cif'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('company_cif') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="company-addresses" class="control-label">Address:</label>
+                                            <input type="text" class="form-control" id="company-addresses" name="company_addresses" value="{{ $user->company_addresses }}}">
+                                            @if ($errors->has('company_addresses'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('company_addresses') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
