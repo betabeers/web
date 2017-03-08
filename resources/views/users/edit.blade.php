@@ -44,11 +44,11 @@
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <label for="slug" class="control-label">Slug</label>
-                                            <input id="slug" type="text" class="form-control" name="slug" value="{{ $user->slug }}" required>
-                                            @if ($errors->has('slug'))
+                                            <label for="phone" class="control-label">phone</label>
+                                            <input id="phone" type="text" class="form-control" name="phone" value="{{ $user->phone }}" required>
+                                            @if ($errors->has('phone'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('slug') }}</strong>
+                                                    <strong>{{ $errors->first('phone') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
@@ -233,7 +233,7 @@
                                     <br>
                                     <div class="col-12 col-md-6">
                                         <label for="unemployed" class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" name="unemployed" id="unemployed" @if($user->unemployed = 1) checked @endif>
+                                            <input type="checkbox" class="form-check-input" name="unemployed" id="unemployed" @if($user->unemployed == 1) checked @endif>
                                             Are you looking for a job?
                                         </label>
                                     </div>
