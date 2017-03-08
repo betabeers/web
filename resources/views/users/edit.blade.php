@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <label for="phone" class="control-label">phone</label>
+                                            <label for="phone" class="control-label">Phone</label>
                                             <input id="phone" type="text" class="form-control" name="phone" value="{{ $user->phone }}" required>
                                             @if ($errors->has('phone'))
                                                 <span class="help-block">
