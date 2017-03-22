@@ -1,4 +1,13 @@
-<header id="header" class="header sticky-top">
+<?php
+/**
+ * Created by PhpStorm.
+ * User: fcarrascosa
+ * Date: 28/01/17
+ * Time: 20:21
+ */
+?>
+
+<header id="header" class="header">
     <nav class="navbar navbar-toggleable-sm">
         <div class="container">
             <div class="header-navigation">
@@ -15,9 +24,11 @@
                                     </a>
                                 </h1>
                             @else
-                            <a class="navbar-brand" href="#">
-                                ßetabeers
-                            </a>
+                                <div class="header-navigation-brand_title">
+                                    <a class="navbar-brand" href="#">
+                                        ßetabeers
+                                    </a>
+                                </div>
                             @endif
                         </div>
                     </div>
@@ -44,12 +55,12 @@
                                     @if( Auth::guest() )
 
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link btn btn-link">
+                                            <a href="{{ Route('users.login') }}" class="nav-link btn btn-link">
                                                 Log in
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link btn btn-primary">
+                                            <a href="{{ Route('users.register') }}" class="nav-link btn btn-primary">
                                                 Register
                                             </a>
                                         </li>
@@ -61,6 +72,7 @@
                                                 {{ Auth::user()->name }} <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="header-navigation-menu_user" aria-expanded="false">
+                                                <a class="dropdown-item" href="{{ route('users.edit') }}">Edit Account</a>
                                                 <a class="dropdown-item" href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                     Logout
                                                 </a>

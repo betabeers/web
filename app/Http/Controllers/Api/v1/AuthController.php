@@ -39,7 +39,10 @@ class AuthController extends BaseApiController
             $request->only('email')
         );
 
-        return response([], 204);
+        return response([
+            'status' => 'success',
+            'message' => trans('passwords.sent')
+        ], 200);
     }
 
     public function broker()

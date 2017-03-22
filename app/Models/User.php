@@ -11,12 +11,23 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $hidden = ['password', 'remember_token'];
-    protected $fillable = [
-        'name', 'email', 'password', 'slug', 'body', 'phone', 'freelance', 'country_id', 'city_id', 'province_id',
-        'location', 'portafolio', 'lookingfor', 'unemployed', 'can_contact', 'newsletter', 'alert_commercial',
-        'company_name', 'company_email', 'company_cif', 'company_addresses', 'url', 'linkedin_url', 'twitter_url',
-        'forrst_url', 'github_url', 'dribbble_url', 'flickr_url', 'youtube_url', 'stackoverflow_url', 'vimeo_url',
-        'delicius_url', 'pinboard_url', 'itunes_url', 'android_url', 'chrome_url', 'masterbranch_url', 'bitbucket_url',
+    protected $guarded = [
+        'admin',
+        'moderator',
+        'visible',
+        'karma',
+        'votes',
+        'visits',
+        'total_logins',
+        'last_login',
+        'banned',
+        'date_newsletter',
+        'visits_google',
+        'visits_finder',
+        'remember_token',
+        'facebook_url',
+        'job_role',
+        'txt_tags'
     ];
 
     public function findBySlugAndId($slug, $id)
@@ -56,11 +67,11 @@ class User extends Authenticatable
 
     public function followers()
     {
-        return $this->hasMany(UserFollow::class, 'to_id');
+        return $this->belongsToMany('App\Models\User', 'users_follows', 'to_id', 'from_id');
     }
 
-    public function followings()
+    public function following()
     {
-        return $this->hasMany(UserFollow::class, 'from_id');
+        return $this->belongsToMany('App\Models\User', 'users_follows', 'from_id', 'to_id');
     }
 }

@@ -1,0 +1,34 @@
+.footer {
+  background-color: #2F3133;
+  color: $white;
+  &-sponsors {
+
+  }
+  &-links {
+    &-list {
+      &_item {
+        color: $white;
+      }
+    }
+  }
+  &-social {
+    &-link {
+      background: $white;
+      border-radius: 50%;
+      display: inline-block;
+      width: 3em;
+      height: 3em;
+      line-height: 3em;
+      margin: 0 .5em;
+      color: #2f3133 !important;
+      transition: all .5s;
+      &:hover {
+        color: $white !important;
+        background: transparent;
+      }
+    }
+  }
+  &-copyright {
+
+  }
+}

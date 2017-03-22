@@ -4,7 +4,6 @@
 
   &-login {
     align-items: center;
-    background: $color-background;
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -40,6 +39,71 @@
 
     }
 
+  }
+
+  // Edit View
+
+  &-edit {
+    .edit {
+      &-sidebar {
+        @extend .card;
+        &-navigation {
+          @extend .nav;
+          @extend .flex-column;
+          .navigation {
+            &-item {
+              @extend .nav-item;
+              background: $white;
+              &.active {
+                background: $color-primary;
+                border-radius: $border-radius;
+                position: relative;
+                &:after {
+                  background: $color-primary;
+                  border: {
+                    top: solid 1px $white;
+                    right: solid 1px $white;
+                  }
+                  content: '';
+                  height: 1rem;
+                  margin-right: -1rem;
+                  margin-top: .75rem;
+                  position: absolute;
+                  right: .45rem;
+                  top: 0;
+                  transform: rotate(45deg);
+                  width: 1rem;
+                }
+                .navigation-item-link {
+                  color: $white;
+                }
+              }
+              &-link {
+                @extend .nav-link;
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Show View
+
+  &-show{
+    .user {
+      @extend .card;
+      &-header {
+        @extend .card-header;
+      }
+      &-block {
+        @extend .card-block;
+      }
+      &-footer {
+        @extend .card-footer;
+      }
+    }
   }
 
 }

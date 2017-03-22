@@ -14,6 +14,16 @@ Route::group(['middleware' => 'auth'], function () {
     });
 });
 
+Route::group(['prefix' => 'static', 'as' => 'static.'], function () {
+    Route::group(['prefix' => 'info', 'as' => 'info.'], function () {
+
+        Route::get('/', ['as' => 'info', 'uses' => 'StaticController@info']);
+        Route::get('/organize', ['as' => 'organize', 'uses' => 'StaticController@organize']);
+        Route::get('/code-of-conduct', ['as' => 'code-of-conduct', 'uses' => 'StaticController@codeOfConduct']);
+
+    });
+});
+
 Route::group(['as' => 'users.'], function () {
     Auth::routes();
 });

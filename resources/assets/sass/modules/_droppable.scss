@@ -1,0 +1,14 @@
+.droppable {
+  height: 314px;
+  border-width: 2px;
+  margin-bottom: 20px;
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 314px;
+  text-align: center;
+  &.drop {
+    color: #222;
+    border-color: #222;
+  }
+}

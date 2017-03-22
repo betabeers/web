@@ -4,11 +4,16 @@
     width: 100%;
     &-brand {
       &_title {
+        @extend h1;
         margin: 0;
         line-height: 2.5em;
         a {
           font-size: 1em;
           color: $white;
+          transition: all .5s;
+          &:hover{
+            letter-spacing: .2rem;
+          }
         }
       }
     }
