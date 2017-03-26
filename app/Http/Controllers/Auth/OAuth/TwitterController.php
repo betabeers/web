@@ -36,6 +36,7 @@ class TwitterController extends Controller
         $authUser = User::where('email', $user->email)->first();
         if ($authUser) {
             $authUser->twitter_id = $user->id;
+            $authUser->name = $user->name;
             $authUser->save();
             return $authUser;
         }
