@@ -28,7 +28,9 @@ Route::group(['as' => 'users.'], function () {
     Auth::routes();
 });
 
-Route::group(['as' => 'auth.'], function () {
-    Route::get('auth/twitter', ['as' => 'twitter.redirect', 'uses' => 'Auth\Twitter@redirectToProvider']);
-    Route::get('auth/twitter/callback', ['as' => 'twitter.callback', 'uses' => 'Auth\Twitter@handleProviderCallback']);
+Route::group(['as' => 'auth.oauth.'], function () {
+    Route::get('auth/twitter', ['as' => 'twitter.redirect', 'uses' => 'Auth\OAuth\TwitterController@redirectToProvider']);
+    Route::get('auth/twitter/callback', ['as' => 'twitter.callback', 'uses' => 'Auth\OAuth\TwitterController@handleProviderCallback']);
+    Route::get('auth/linkedin', ['as' => 'linkedin.redirect', 'uses' => 'Auth\OAuth\LinkedinController@redirectToProvider']);
+    Route::get('auth/linkedin/callback', ['as' => 'linkedin.callback', 'uses' => 'Auth\OAuth\LinkedinController@handleProviderCallback']);
 });

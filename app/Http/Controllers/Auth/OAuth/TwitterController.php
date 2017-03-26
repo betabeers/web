@@ -1,21 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth\OAuth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\TwitterCallbackRequest;
 
-class Twitter extends Controller
+class TwitterController extends Controller
 {
     public function redirectToProvider()
     {
         return Socialite::driver('twitter')->redirect();
     }
 
-    public function handleProviderCallback()
+    public function handleProviderCallback(TwitterCallbackRequest $request)
     {
         try {
             $user = Socialite::driver('twitter')->user();
@@ -32,8 +33,10 @@ class Twitter extends Controller
 
     public function findOrCreateUser($user, $provider = null)
     {
-        $authUser = User::where('twitter_id', $user->id)->first();
+        $authUser = User::where('email', $user->email)->first();
         if ($authUser) {
+            $authUser->twitter_id = $user->id;
+            $authUser->save();
             return $authUser;
         }
 
