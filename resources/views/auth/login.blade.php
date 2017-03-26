@@ -54,11 +54,11 @@
                         </a>
                     </div>
                 </form>
-                <a href="{{ route('auth.oauth.twitter.redirect') }}" class="btn btn-primary">
-                    <i class="fa fa-twitter"></i> {{ trans('users.login.twitter') }}
+                <a href="{{ route('auth.oauth.twitter.redirect') }}" class="btn btn-info">
+                    <i class="fa fa-twitter"></i> Twitter
                 </a>
                 <a href="{{ route('auth.oauth.linkedin.redirect') }}" class="btn btn-primary">
-                    <i class="fa fa-linkedin"></i> {{ trans('users.login.linkedin') }}
+                    <i class="fa fa-linkedin"></i> LinkedIn
                 </a>
             </div>
             <div class="text-center">
