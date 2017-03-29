@@ -1,5 +1,39 @@
 .users {
 
+  // Register View
+
+  &-register {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    .register {
+      &-title {
+        color: $white;
+      }
+      &-container {
+        background: $color-background-white;
+        border-radius: 3px;
+        box-shadow: 0 5px 5px $color-shadow;
+        max-width: 640px;
+        padding: 15px;
+      }
+      &-method {
+        &_form {
+        }
+        &-title {
+          @extend .col-12;
+          font-size: 1.4em;
+        }
+        &-legend {
+          margin:{
+            bottom: .5rem;
+          }
+        }
+      }
+    }
+  }
+
   // Login View
 
   &-login {

@@ -54,10 +54,10 @@
                         </a>
                     </div>
                 </form>
-                <a href="{{ route('auth.oauth.twitter.redirect') }}" class="btn btn-info">
+                <a href="{{ route('auth.oauth.twitter.redirect') }}" class="btn btn-twitter">
                     <i class="fa fa-twitter"></i> Twitter
                 </a>
-                <a href="{{ route('auth.oauth.linkedin.redirect') }}" class="btn btn-primary">
+                <a href="{{ route('auth.oauth.linkedin.redirect') }}" class="btn btn-linkedin">
                     <i class="fa fa-linkedin"></i> LinkedIn
                 </a>
             </div>

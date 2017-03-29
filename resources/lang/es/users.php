@@ -4,6 +4,8 @@ return [
 
     'login' => 'Acceder',
     'register' => 'Registrarme',
+    'register_form' => 'Regístrate como usuario',
+    'register_social' => 'O con tus redes sociales',
     'email' => 'Correo electrónico',
     'password' => 'Contraseña',
     'remember' => 'Recordar',

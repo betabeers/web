@@ -24,6 +24,26 @@
       @extend .btn-secondary;
     }
   }
+  &-twitter {
+    @extend .btn-info;
+  }
+  &-linkedin {
+    @extend .btn-info;
+    background: {
+      color: #0077B5;
+    }
+    border: {
+      color: #0077B5;
+    }
+    &:hover {
+      background: {
+        color: #004471;
+      }
+      border: {
+        color: #004471;
+      }
+    }
+  }
   &-link {
     color: $color-primary;
     &:hover {
